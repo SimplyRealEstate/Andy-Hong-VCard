@@ -12,6 +12,18 @@
     --black: #000000;
 }
 
+/* iOS Safari 링크 스타일 강제 초기화 */
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    -webkit-appearance: none !important;
+    text-decoration: none !important;
+}
+
+a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+}
+
 body{
     font-family: "aktiv-grotesk", sans-serif;
     font-weight: 700;
@@ -21,11 +33,6 @@ body{
     align-items: center;
     justify-content: center;
     padding: 20px;
-    touch-action: manipulation;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .card{

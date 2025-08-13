@@ -21,6 +21,11 @@ body{
     align-items: center;
     justify-content: center;
     padding: 20px;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .card{
@@ -119,15 +124,23 @@ body{
     margin-left: 20px;
     border-radius: 10px;
     font-size: 20px;
-    color: var(--cream);
+    color: var(--cream) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
     cursor: pointer;
-    user-select: none;
-    text-decoration: none;
+    user-select: none !important;
+    text-decoration: none !important;
     transition: transform 0.2s ease;
+}
+
+.card-body .contact:link,
+.card-body .contact:visited,
+.card-body .contact:hover,
+.card-body .contact:active {
+    color: var(--cream) !important;
+    text-decoration: none !important;
 }
 
 .card-body .contact:active {
@@ -169,11 +182,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: var(--dark-blue);
+    text-decoration: none !important;
+    color: var(--dark-blue) !important;
     cursor: pointer;
-    user-select: none;
+    user-select: none !important;
     transition: transform 0.2s ease;
+}
+
+.card-body .call-email .call:link,
+.card-body .call-email .call:visited,
+.card-body .call-email .call:hover,
+.card-body .call-email .call:active {
+    color: var(--dark-blue) !important;
+    text-decoration: none !important;
 }
 
 .card-body .call-email .call:active {
@@ -190,11 +211,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: var(--dark-blue);
+    text-decoration: none !important;
+    color: var(--dark-blue) !important;
     cursor: pointer;
-    user-select: none;
+    user-select: none !important;
     transition: transform 0.2s ease;
+}
+
+.card-body .call-email .email:link,
+.card-body .call-email .email:visited,
+.card-body .call-email .email:hover,
+.card-body .call-email .email:active {
+    color: var(--dark-blue) !important;
+    text-decoration: none !important;
 }
 
 .card-body .call-email .email:active {

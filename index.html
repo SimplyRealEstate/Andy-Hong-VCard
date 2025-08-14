@@ -25,7 +25,7 @@
                 <div class="realtor">Realtor</div>
                 <div class="agent-name">Andy Hong</div>
             </div>
-            <a href="contact.vcf" download="contact.vcf" class="contact">Add Contact</a>
+            <a href="javascript:void(0)" onclick="downloadVCF()" class="contact">Add Contact</a>
             <div class="call-email">
                 <a href="tel:+12018350860" class="call">Call</a>
                 <a href="mailto:ahong@remaxsimplynj.com" class="email">Email</a>
@@ -61,5 +61,34 @@
         <div class="body-line">
         </div>
     </div>
+
+<script>
+function downloadVCF() {
+    const vcfContent = `BEGIN:VCARD
+VERSION:3.0
+FN:Andy Hong
+N:Hong;Andy;;;
+ORG:RE/MAX Simply
+TITLE:Realtor
+TEL;TYPE=CELL:+12018350860
+EMAIL:ahong@remaxsimplynj.com
+ADR;TYPE=WORK:;;120 Sylvan Ave, Suite 106;Englewood Cliffs;NJ;07632;USA
+NOTE:Simply Better
+END:VCARD`;
+
+    const blob = new Blob([vcfContent], { type: 'text/vcard;charset=utf-8' });
+    const url = window.URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'contact.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    
+    window.URL.revokeObjectURL(url);
+}
+</script>
+
 </body>
 </html>

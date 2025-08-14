@@ -28,21 +28,22 @@ body{
     font-family: "aktiv-grotesk", sans-serif;
     font-weight: 700;
     font-style: normal;
+    min-height: 100vh;
     background: var(--dark-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: clamp(15px, 4.5vw, 20px);
 }
 
 .card{
-    min-width: 400px;
-    width: 400px;
-    height: 700px;
+    min-width: clamp(300px, 90vw, 400px);
+    width: clamp(300px, 90vw, 400px);
+    height: clamp(525px, 157.5vw, 700px);
     background: var(--dark-blue);
-    border-radius: 20px;
+    border-radius: clamp(15px, 4.5vw, 20px);
     display: grid;
-    grid-template-rows: 130px 20px 530px 20px;
+    grid-template-rows: clamp(97.5px, 29.25vw, 130px) clamp(15px, 4.5vw, 20px) clamp(397.5px, 119.25vw, 530px) clamp(15px, 4.5vw, 20px);
     overflow: hidden;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
     
@@ -54,28 +55,28 @@ body{
     position: relative;
 }
 .header .simply-logo {
-    width: 300px;
+    width: clamp(225px, 67.5vw, 300px);
     position: relative;
-    top: 10px;
-    left: 85px;
+    top: clamp(7.5px, 2.25vw, 10px);
+    left: clamp(63.75px, 19.125vw, 85px);
 }
 .header .profile-outline {
-    width: 150px;
-    height: 150px;
-    top: 75px;
-    left: 20px;
+    width: clamp(112.5px, 33.75vw, 150px);
+    height: clamp(112.5px, 33.75vw, 150px);
+    top: clamp(56.25px, 16.875vw, 75px);
+    left: clamp(15px, 4.5vw, 20px);
     border-radius: 50%;
     overflow: hidden;
-    outline: 5px solid var(--white);
-    outline-offset: -2.5px;
+    outline: clamp(3.75px, 1.125vw, 5px) solid var(--white);
+    outline-offset: clamp(-1.875px, -0.5625vw, -2.5px);
     display: flex;
     position: absolute;
 }
 .header .profile {
-    width: 150px;
-    height: 150px;
-    top: 75px;
-    left: 20px;
+    width: clamp(112.5px, 33.75vw, 150px);
+    height: clamp(112.5px, 33.75vw, 150px);
+    top: clamp(56.25px, 16.875vw, 75px);
+    left: clamp(15px, 4.5vw, 20px);
     border-radius: 50%;
     overflow: hidden;
     background: var(--blue);
@@ -102,40 +103,40 @@ body{
     
 }
 .card-body .bio {
-    width: 170px;
-    height: 65px;
-    left: 200px;
+    width: clamp(127.5px, 38.25vw, 170px);
+    height: clamp(48.75px, 14.625vw, 65px);
+    left: clamp(150px, 45vw, 200px);
     position: relative;
-    padding-bottom: 20px;;
+    padding-bottom: clamp(15px, 4.5vw, 20px);
 }
 .card-body .bio .realtor{
-    padding-top: 15px;
-    width: 170px;
-    height: 20px;
+    padding-top: clamp(11.25px, 3.375vw, 15px);
+    width: clamp(127.5px, 38.25vw, 170px);
+    height: clamp(15px, 4.5vw, 20px);
     color: var(--dark-blue);
     text-align: end;
 }
 .card-body .bio .agent-name{
-    width: 170px;
-    height: 30px;
+    width: clamp(127.5px, 38.25vw, 170px);
+    height: clamp(22.5px, 6.75vw, 30px);
     color: var(--dark-blue);
-    font-size: 25px;
+    font-size: clamp(18.75px, 5.625vw, 25px);
     font-weight: 800;
     text-align: end;
 }
 
 .card-body .contact{
     background: var(--dark-blue);
-    width: 360px;
-    height: 50px;
-    margin-left: 20px;
-    border-radius: 10px;
-    font-size: 20px;
+    width: clamp(270px, 81vw, 360px);
+    height: clamp(37.5px, 11.25vw, 50px);
+    margin-left: clamp(15px, 4.5vw, 20px);
+    border-radius: clamp(7.5px, 2.25vw, 10px);
+    font-size: clamp(15px, 4.5vw, 20px);
     color: var(--cream) !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: clamp(7.5px, 2.25vw, 10px);
     cursor: pointer;
     user-select: none !important;
     text-decoration: none !important;
@@ -171,20 +172,20 @@ body{
 
 .card-body .call-email{
 
-    width: 360px;
-    height: 50px;
-    margin-left: 20px;
-    font-size: 20px;
+    width: clamp(270px, 81vw, 360px);
+    height: clamp(37.5px, 11.25vw, 50px);
+    margin-left: clamp(15px, 4.5vw, 20px);
+    font-size: clamp(15px, 4.5vw, 20px);
     color: var(--dark-blue);
     display: flex;
     align-items: center;
-    margin-bottom: 10px;;
+    margin-bottom: clamp(7.5px, 2.25vw, 10px);
 }
 .card-body .call-email .call{
-    height: 50px;
-    width: 175px;
-    margin-right: 10px;
-    border-radius: 10px;
+    height: clamp(37.5px, 11.25vw, 50px);
+    width: clamp(131.25px, 39.375vw, 175px);
+    margin-right: clamp(7.5px, 2.25vw, 10px);
+    border-radius: clamp(7.5px, 2.25vw, 10px);
     background: var(--sky-blue);
     display: flex;
     align-items: center;
@@ -211,9 +212,9 @@ body{
     transform: scale(1.02);
 }
 .card-body .call-email .email{
-    height: 50px;
-    width: 175px;
-    border-radius: 10px;
+    height: clamp(37.5px, 11.25vw, 50px);
+    width: clamp(131.25px, 39.375vw, 175px);
+    border-radius: clamp(7.5px, 2.25vw, 10px);
     background: var(--sky-blue);
     display: flex;
     align-items: center;
@@ -240,19 +241,19 @@ body{
     transform: scale(1.02);
 }
 .card-body .info-box{
-    width: 360px;
-    height: 245px;
-    margin-left: 20px;
+    width: clamp(270px, 81vw, 360px);
+    height: clamp(183.75px, 55.125vw, 245px);
+    margin-left: clamp(15px, 4.5vw, 20px);
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: clamp(7.5px, 2.25vw, 10px);
     background: var(--white);
     color: var(--dark-charcoal-gray);
     display: grid;
     justify-content: center;
     text-align: center;
-    padding-top: 10px;
-    font-size: 15px;
-    margin-bottom: 10px;
+    padding-top: clamp(7.5px, 2.25vw, 10px);
+    font-size: clamp(11.25px, 3.375vw, 15px);
+    margin-bottom: clamp(7.5px, 2.25vw, 10px);
 }
 .card-body .sns{
     display: flex;
@@ -260,15 +261,15 @@ body{
     justify-content: center;
 }
 .card-body .sns .sns-item{
-    width: 50px;
-    height: 50px;
+    width: clamp(37.5px, 11.25vw, 50px);
+    height: clamp(37.5px, 11.25vw, 50px);
     border-radius: 50%;
     background: var(--sky-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: clamp(3.75px, 1.125vw, 5px);
+    margin-right: clamp(3.75px, 1.125vw, 5px);
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.2s ease;

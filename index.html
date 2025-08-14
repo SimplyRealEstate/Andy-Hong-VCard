@@ -80,13 +80,16 @@ END:VCARD`;
     const url = window.URL.createObjectURL(blob);
     
     const a = document.createElement('a');
+    a.style.display = 'none';
     a.href = url;
     a.download = 'contact.vcf';
     document.body.appendChild(a);
     a.click();
-    document.body.removeChild(a);
-    
-    window.URL.revokeObjectURL(url);
+
+    setTimeout(() => {
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }, 100);
 }
 </script>
 

@@ -43,7 +43,7 @@ body{
     border-radius: clamp(15px, 4.5vw, 20px);
     display: grid;
     grid-template-rows: clamp(97.5px, 29.25vw, 130px) clamp(15px, 4.5vw, 20px) clamp(397.5px, 119.25vw, 530px) clamp(15px, 4.5vw, 20px);
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
     
 }
@@ -122,6 +122,8 @@ body{
     font-size: clamp(18.75px, 5.625vw, 25px);
     font-weight: 800;
     text-align: end;
+    white-space: nowrap;
+    overflow: visible;
 }
 
 .card-body .contact{

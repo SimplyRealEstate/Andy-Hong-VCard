@@ -1,0 +1,109 @@
+/* Shared template styles — no need to edit per agent. */
+:root {
+  --blue: #003DA5;      /* REMAX blue */
+  --red: #DC1C2E;       /* REMAX red  */
+  --navy: #0A1F44;
+  --ink: #16213A;
+  --muted: #55607A;
+  --line: #E3E7EF;
+  --soft: #F2F5FA;
+  --btn: clamp(44px, 6.6svh, 58px);   /* tap target height */
+  --gap: clamp(6px, 1.5svh, 14px);
+  --pad: clamp(14px, 4.5vw, 22px);
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: "aktiv-grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR", "Gothic A1", sans-serif;
+  color: var(--ink);
+  background: var(--navy);
+  min-height: 100svh;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: rgba(0,61,165,.15); }
+a:focus-visible { outline: 3px solid #7FB2FF; outline-offset: 2px; }
+
+/* ---- card shell: full screen on phones, centered card on larger screens ---- */
+.card {
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding-bottom: max(var(--gap), env(safe-area-inset-bottom));
+  overflow: hidden;
+}
+@media (min-width: 481px) {
+  body { display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 30% 20%, #12306b, var(--navy) 70%); }
+  .card { width: 410px; min-height: 0; height: min(820px, calc(100svh - 48px)); border-radius: 24px; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+}
+
+/* ---- brand bar ---- */
+.brand { display: flex; justify-content: center; align-items: center; padding: clamp(10px, 1.6svh, 16px) var(--pad) 0; }
+.logo { width: min(56%, 220px); height: auto; display: block; }
+
+/* ---- hero: head-and-shoulders cutout filling a light brand panel ---- */
+.hero {
+  flex: 1 1 auto; min-height: 0;
+  margin: 0 var(--pad);
+  display: flex; flex-direction: column; align-items: center;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(0,61,165,.16), transparent 58%),
+    linear-gradient(180deg, #F5F8FD, #D9E4F6);
+  position: relative; overflow: hidden;
+}
+.hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--red); z-index: 1; }
+.hero picture { position: relative; flex: 1 1 auto; width: 100%; min-height: clamp(170px, 34svh, 300px); }
+.photo { /* always shows the whole head-to-chest crop; extra width is trimmed at the sides */
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  height: 100%; width: auto; max-width: none;
+}
+
+/* ---- name, title, one-liner ---- */
+.who { margin-top: calc(var(--gap) * -.5); padding: 0 var(--pad); text-align: center; line-height: 1.15; display: flex; flex-direction: column; align-items: center; gap: clamp(3px, .7svh, 6px); }
+.who h1 { font-size: clamp(30px, 9.4vw, 40px); line-height: 1.05; font-weight: 800; letter-spacing: -.015em; color: var(--navy); }
+.ko { font-size: .55em; font-weight: 600; color: var(--muted); letter-spacing: 0; margin-left: 2px; }
+.role { font-size: clamp(14px, 4.1vw, 17px); font-weight: 700; color: var(--blue); }
+.msg { /* agent's own sentence; quote marks sit centered in the left/right gutters */
+  margin-top: 6px; width: 100%; padding: 8px 10px; border-radius: 14px;
+  display: grid; grid-template-columns: 22px 1fr 22px; align-items: center; column-gap: 8px;
+  background: var(--soft); border: 1px solid var(--line);
+  font-size: clamp(12.5px, 3.6vw, 14px); font-weight: 600; color: var(--navy); line-height: 1.3;
+}
+.msg::before, .msg::after { color: var(--red); font-weight: 800; font-size: 30px; line-height: 1; height: .5em; font-family: Georgia, serif; }
+.msg::before { content: "\201C"; }
+.msg::after { content: "\201D"; }
+
+/* ---- actions ---- */
+.actions { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 var(--pad); }
+.btn {
+  min-height: var(--btn); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-weight: 700; font-size: clamp(15px, 4.2vw, 17px);
+  transition: transform .12s ease, filter .12s ease;
+}
+.btn:active { transform: scale(.97); }
+.btn:hover { filter: brightness(1.08); }
+.wide { grid-column: 1 / -1; }
+.primary { background: var(--red); color: #fff; font-size: clamp(16px, 4.6vw, 18px); box-shadow: 0 6px 16px rgba(220,28,46,.28); }
+.solid { background: var(--blue); color: #fff; }
+.minor { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ghost { min-height: 44px; background: var(--soft); color: var(--blue); border: 1px solid var(--line); font-size: 15px; }
+
+/* ---- icons (SVG files used as masks so they take the text color) ---- */
+.ic { width: 20px; height: 20px; flex: none; background: currentColor; -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
+
+/* ---- social (any number of icons, centered; wraps if needed) ---- */
+.social { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px clamp(6px, 2.6vw, 12px); padding: 0 var(--pad); }
+.soc { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #fff; }
+.soc .ic { width: 20px; height: 20px; }
+.soc:hover { background: var(--blue); }
+
+/* very short screens: tighten */
+@media (max-height: 600px) {
+  :root { --gap: 6px; }
+  .msg { padding: 5px 12px; }
+}
